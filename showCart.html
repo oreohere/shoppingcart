@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Hello User!</title>
+     <style>
+    
+body{ 
+        background: url('https://images6.alphacoders.com/439/439771.png') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #009999;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 12px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 350px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.omg{
+  background-color: #f2f2f2;
+  padding-left: 50px;
+  padding-right: 50px;
+  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;
+  margin-left: 180px;
+  width: 1000px;
+}
+
+table {
+    width: 1000px;
+    border-collapse:separate; 
+    margin-left: -50px;
+  }
+
+th,td {
+        border-bottom: 1px solid #ddd;
+        padding: 30px;
+        text-align: center !important;
+}
+td{
+  height: 40px;
+}
+th {
+    background-color: #009999;
+    color: white;
+}
+tr:hover{background-color:#00b3b3}
+</style>
+  
+ 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 
+</head>
+ 
+<body>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">The 44X20 Box</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="holla"><a href="/userHome">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      <li><a href="/logout"><span class=" glyphicon glyphicon-log-out"></span> LogOut</a></li>
+    </ul>
+  </div>
+</nav>  
+<div class="omg">
+<table>
+  <tr>
+    <!--<th> </th>-->
+    <th><font size=6>Item name</font></th>
+    <th><font size=6>Brand</font></th>
+    <th><font size=6>Category</font></th>
+    <th><font size=6>Price</font></th>
+    <th><font size=6>Date of purchase</font></th>
+  </tr>
+  {% for wish in wishes -%}
+  <tr>
+    <!--<td></td>-->
+    <td><font size=4>{{ wish[4] }}</font></td>
+    <td><font size=4>{{ wish[6] }}</font></td>
+    <td><font size=4>{{ wish[5] }}</font></td>
+    <td><font size=4>{{ wish[7] }}</font></td>
+    <td><font size=4>{{ wish[3] }}</font></td>
+  </tr>
+  {% endfor -%}  
+</table>
+<div class="hula">
+ <button class="button" style="vertical-align:middle" disabled="true"><span>Total = Rs {{ total }}</span></button>
+ </div> 
+
+</div>
+  
+
+    
+</body>
+ 
+</html>
